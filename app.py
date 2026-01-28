@@ -15,7 +15,7 @@ bcrypt = Bcrypt(app)
 
 # ---------------- MONGODB ----------------
 username = "nextgen_admin"
-password = quote_plus("nextgen123")
+password = quote_plus("YOUR_PASSWORD")
 
 MONGO_URI = (
     f"mongodb+srv://{username}:{password}"
@@ -163,3 +163,4 @@ def insurance():
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False)
+
