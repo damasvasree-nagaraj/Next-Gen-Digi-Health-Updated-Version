@@ -1,0 +1,300 @@
+/* ================= GLOBAL RESET ================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= GLOBAL BACKGROUND ================= */
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* SAME background image for ALL pages */
+  background-image: url("../images/background/dashboard-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #ffffff;
+  position: relative;
+}
+
+/* Professional medical color overlay (NO grey) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 32, 48, 0.92),
+    rgba(0, 110, 120, 0.78)
+  );
+  z-index: -1;
+}
+
+/* ================= CENTER WRAPPER (LOGIN / REGISTER) ================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= AUTH CARD (LOGIN + REGISTER) ================= */
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  text-align: center;
+
+  color: #0b4f6c;
+}
+
+/* Title */
+.card h2 {
+  margin-bottom: 22px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ================= INPUTS ================= */
+
+.card input,
+.card select {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+
+  border-radius: 10px;
+  border: 1px solid #cfd8dc;
+  font-size: 15px;
+
+  background: #ffffff;
+  color: #0b4f6c;
+}
+
+.card input:focus,
+.card select:focus {
+  outline: none;
+  border-color: #0aa1a7;
+  box-shadow: 0 0 0 2px rgba(10, 161, 167, 0.2);
+}
+
+/* ================= BUTTON ================= */
+
+.card button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 16px;
+
+  background: linear-gradient(135deg, #0aa1a7, #0b4f6c);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(11, 79, 108, 0.4);
+}
+
+/* ================= TEXT LINKS ================= */
+
+.register-text {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #0aa1a7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.dashboard-container h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 50px;
+}
+
+/* ================= CARD GRID ================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* ================= FEATURE CARD ================= */
+
+.feature-card {
+  position: relative;
+  height: 220px;
+  border-radius: 22px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Dark overlay on cards */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.25)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Card text */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.card-overlay h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-overlay p {
+  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* Hover effect */
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-container {
+    padding: 60px 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pharmacy-body {
+  background-image: url("../images/background/pharmacy-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.glass-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+
+  color: #fff;
+  animation: fadeUp 0.8s ease;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+}
+
+.status-list li {
+  margin: 12px 0;
+}
+
+.primary-btn {
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
